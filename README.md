@@ -15,6 +15,8 @@ For example usage, please see the `demo` folder
 ## References
 [1] Gyorgy Denes, Rafal K. Mantiuk "Predicting visible flicker in temporally changing images" to appear in Human Vision and Electronic Imaging, 2020
 
+Paper pre-print: https://www.cl.cam.ac.uk/~gd355/publications/hvei20_paper_comp.pdf
+
 ## License
 MIT License
 
