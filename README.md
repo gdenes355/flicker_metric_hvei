@@ -3,7 +3,7 @@
 
 Flicker predictor: a visual model for predicting flicker visibility in temporally changing images. The model performs a multi-scale analysis on the difference between consecutive frames, normalizing values with the spatio-temporal contrast sensitivity function as approximated by the pyramid of visibility. The output of the model is a 2D detection probability map.
 
-[![Teaser](https://www.cl.cam.ac.uk/~gd355/publications/hvei20_teaser.svg)](https://www.cl.cam.ac.uk/~gd355/publications/hvei20_teaser.svg)
+[![Teaser](https://www.cl.cam.ac.uk/~gd355/publications/static/hvei20_teaser.png)](https://www.cl.cam.ac.uk/~gd355/publications/static/hvei20_teaser.png)
 
 ## Usage
 The model is self-contained in this repository. The single entry point is: `predict_flicker_in_image.m` which takes two consecutive frames, a display resolution (ppd) and a refresh rate.
