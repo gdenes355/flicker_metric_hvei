@@ -13,7 +13,8 @@ Frames should be in CIE XYZ colour-space
 For example usage, please see the `demo` folder
 
 ## References
-[1] Gyorgy Denes, Rafal K. Mantiuk "Predicting visible flicker in temporally changing images" to appear in Human Vision and Electronic Imaging, 2020
+[1] Gyorgy Denes, Rafal K. Mantiuk "Predicting visible flicker in temporally changing images" in Human Vision and Electronic Imaging, 2020
+https://doi.org/10.2352/ISSN.2470-1173.2020.11.HVEI-233
 
 Paper pre-print: https://www.cl.cam.ac.uk/~gd355/publications/hvei20_paper_comp.pdf
 
