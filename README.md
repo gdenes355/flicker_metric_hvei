@@ -12,6 +12,32 @@ Frames should be in CIE XYZ colour-space
 ## Examples
 For example usage, please see the `demo` folder
 
+## Dataset
+You can evaluate your own flicker model against our dataset if you would like to. The entire dataset is uploaded and can be found in `stimuli.mat`. Use Matlab (scipi.io.loadmat from Python) to open this.
+Fields:
+* P: 18x512x512 array: aggregated marking probabilities for the 18 images
+* P_observers: 18x19x512x512 array: marking probabilities for the 18 images for the 19 individual observers (averaged over 3 trials per observer)
+* V_observers: 18x19x512x512 array: marking variance for the 18 images for the 19 individual observers (measured over 3 trials per observer)
+* V_sample: 18x512x512 array: sample variance for the 18 image markings (measured as `var(P_observers, 1, 2) / 9`)
+* V_simple: 18x512x512 array: variance estimated as pq
+* names: 18x1 cell: image names
+* levels: 18x1 array: blur levels
+* refreshRates: 18x1 array: refresh rate at which the images were displayed (note that the flicker frequency of the alternating signal is half of the refresh rate -- see Nyquist)
+* ref: 18x512x512x3 array: 18 sharp images encoded in CIE 1931 XYZ
+* blur : 18x512x512x3 array: 18 blurry images encoded in CIE 1931 XYZ
+Data was measured on 52ppd.
+
+An example use of the stimuli would be:
+```matlab
+iS = 8;  % use the 8th stimulus
+ppd = 52;
+PMap = predict_flicker_in_image(squeeze(stimuli.ref(iS,:,:,:)), ...
+                                squeeze(stimuli.blur(iS,:,:,:)), ...
+                                ppd, stimuli.refreshRates(iS));
+PMap = clamp(PMap, 0, 1);                           
+GroundTruth = squeeze(stimuli.P(iS,:,:));
+```
+
 ## References
 [1] Gyorgy Denes, Rafal K. Mantiuk "Predicting visible flicker in temporally changing images" in Human Vision and Electronic Imaging, 2020
 https://doi.org/10.2352/ISSN.2470-1173.2020.11.HVEI-233
